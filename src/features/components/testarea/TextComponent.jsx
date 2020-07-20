@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import fetchCountries from '../store/actions/data/fetchCountries'
+import fetchCountries from '../../store/actions/data/fetchCountries'
 
 const TextComponent = (props) => {
     useEffect(() => {
