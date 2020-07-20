@@ -5,10 +5,10 @@ import fetchCountries from '../store/actions/data/fetchCountries'
 const TextComponent = (props) => {
     useEffect(() => {
         props.fetchCountries();
-      }, []);
+      }, [props]);
     return (
         <div>
-            
+            {props.countries.map(country => <p key={country.name} >{country.name}</p>)}
         </div>
     ) 
 }
