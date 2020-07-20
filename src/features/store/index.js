@@ -1,7 +1,10 @@
 import { combineReducers, compose, createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
+import countriesReducer from "./reducers/countriesReducer";
 
-const reducer = combineReducers({});
+const reducer = combineReducers({
+  countries: countriesReducer,
+});
 
 const middlewares = [thunk];
 
