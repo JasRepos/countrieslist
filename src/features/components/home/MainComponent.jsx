@@ -1,16 +1,29 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import CardListComponent from "../cards/CardListComponent";
 import fetchCountries from "../../store/actions/data/fetchCountries";
+import SearchBoxComponent from "../SearchBox/SearchBoxComponent";
 
 const MainComponent = (props) => {
+  const [search, setSearch] = useState("");
+  const [filteredCountries, setFilteredCountries] = useState([]);
+
   useEffect(() => {
     props.fetchCountries();
   }, [props]);
 
+  useEffect(() => {
+    setFilteredCountries(
+      props.countries.filter(country =>
+        country.name.toLowerCase().includes(search.toLowerCase())
+      )
+    );
+  }, [search, props.countries]);
+
   return (
     <div>
-      <CardListComponent countries={props.countries} >
+      <SearchBoxComponent placeholder='Search Countries' handleChange={e=> setSearch(e.target.value)} />
+      <CardListComponent countries={filteredCountries} >
         
       </CardListComponent>
     </div>

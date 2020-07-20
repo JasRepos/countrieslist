@@ -6,17 +6,9 @@ import { Grid, Table } from "semantic-ui-react";
 
 const CardComponent = (props) => {
   const [modalState, setModalState] = useState(false);
-  let isModalOpen = false;
+
   const manageState = () => {
     setModalState(!modalState);
-  };
-
-  const openModal = () => {
-    setModalState(true);
-  };
-
-  const closeModal = () => {
-    setModalState(false);
   };
 
   return (
@@ -30,32 +22,28 @@ const CardComponent = (props) => {
       <h3>{props.country.name}</h3>
       <p>{props.country.region}</p>
       <Modal isOpen={modalState} ariaHideApp={false}>
-        
-
         <Grid>
           <Grid.Row>
             <Grid.Column width={4}>
-            <Table color="teal" inverted>
-          <Table.Body>
-            <Table.Row>
-              <Table.Cell>
-                <img
-                  alt={props.country.name}
-                  height="300px"
-                  width="600px"
-                  src={props.country.flag}
-                />
-              </Table.Cell>
-              
-            </Table.Row>
-            <Table.Row>
-            <Table.Cell>
-                <SimpleMap latlng={props.country.latlng} />
-              </Table.Cell>
-
-            </Table.Row>
-          </Table.Body>
-        </Table>
+              <Table color="teal" inverted>
+                <Table.Body>
+                  <Table.Row>
+                    <Table.Cell>
+                      <img
+                        alt={props.country.name}
+                        height="300px"
+                        width="600px"
+                        src={props.country.flag}
+                      />
+                    </Table.Cell>
+                  </Table.Row>
+                  <Table.Row>
+                    <Table.Cell>
+                      <SimpleMap latlng={props.country.latlng} />
+                    </Table.Cell>
+                  </Table.Row>
+                </Table.Body>
+              </Table>
               <br />
               <br />
             </Grid.Column>
