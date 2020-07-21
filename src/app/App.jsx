@@ -8,7 +8,9 @@ import FlagTest from '../features/components/testarea/FlagTest';
 function App() {
   return (
     <div className="App">
-      <FlagTest/>
+      <br/>
+      <br/>
+      <br/>
       <br/>
       <h1>LIST OF COUNTRIES</h1>
       <br/>

@@ -1,10 +1,11 @@
 import  './SearchBoxStyles.css'
 import React from 'react'
-import { Input } from 'semantic-ui-react'
+import { Input, Icon } from 'semantic-ui-react'
 
 const SearchBoxComponent = ({placeholder, handleChange}) => {
     return (
-        <Input
+        <Input 
+        icon='search'
         className='search'
         type='search'
         placeholder={placeholder}

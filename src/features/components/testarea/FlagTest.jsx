@@ -1,17 +1,11 @@
 import React, { useState } from "react";
-import { Image, Button } from "semantic-ui-react";
+import { Image, Button, Grid } from "semantic-ui-react";
 import Modal from "react-modal";
 
 const FlagTest = () => {
-  var subtitle;
   const [modalIsOpen, setIsOpen] = useState(false);
   function openModal() {
     setIsOpen(true);
-  }
-
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = "#f00";
   }
 
   function closeModal() {
@@ -27,16 +21,38 @@ const FlagTest = () => {
         {" "}
         <Image src="https://restcountries.eu/data/col.svg"></Image>{" "}
       </button>
-      <Modal
-        isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        contentLabel="Example Modal"
-      >
-        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
-        <button onClick={closeModal}>close</button>
-        <div>I am a modal</div>
-        
+      <Modal isOpen={modalIsOpen} onRequestClose={closeModal}>
+        <Grid>
+          <Grid.Row>
+            <Grid.Column width={15}></Grid.Column>
+            <Grid.Column width={1}>
+              <Button color="red" icon="close" onClick={closeModal} />
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+
+        <Grid celled>
+          <Grid.Row>
+            <Grid.Column width={3}>
+              <Image src="/images/wireframe/image.png" />
+            </Grid.Column>
+            <Grid.Column width={13}>
+              <Image src="/images/wireframe/centered-paragraph.png" />
+            </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row>
+            <Grid.Column width={3}>
+              <Image src="/images/wireframe/image.png" />
+            </Grid.Column>
+            <Grid.Column width={10}>
+              <Image src="/images/wireframe/paragraph.png" />
+            </Grid.Column>
+            <Grid.Column width={3}>
+              <Image src="/images/wireframe/image.png" />
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
       </Modal>
     </div>
   );
