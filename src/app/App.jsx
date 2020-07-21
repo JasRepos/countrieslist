@@ -1,24 +1,60 @@
 import React, { Fragment } from "react";
-//import AppMainPage from "../features/components/testarea/AppMainPage";
-import NavBar from "../features/components/navbar/NavBar";
-import { Container } from "semantic-ui-react";
-import CountriesList from "../features/components/country/countrieslist/CountriesList";
+import { Container, Image, Icon, Menu } from "semantic-ui-react";
 import CountryDashboard from "../features/components/country/countryDashboard/CountryDashboard";
-//import "./App.css";
-//import TestComponent from '../features/components/TextComponent'
-//import CardListComponent from '../features/components/cards/CardListComponent';
-//import MainComponent from "../features/components/home/MainComponent";
-//import FlagTest from "../features/components/testarea/FlagTest";
-//import { Grid } from "semantic-ui-react";
 
 function App() {
+  const [darkMode, setDarkMode] = React.useState(getInitialMode());
+  React.useEffect(() => {
+    localStorage.setItem("dark", JSON.stringify(darkMode));
+  }, [darkMode]);
+
+  function getInitialMode() {
+    const isReturningUser = "dark" in localStorage;
+    const savedMode = JSON.parse(localStorage.getItem("dark"));
+    const userPrefersDark = getPrefColorScheme();
+
+    if (isReturningUser) {
+      return savedMode;
+    } else if (userPrefersDark) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function getPrefColorScheme() {
+    if (!window.matchMedia) return;
+
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  }
+
   return (
     <Fragment>
-      <NavBar />
-      <Container className='main'>
-        <CountryDashboard/>
-      </Container>
-      
+      <div className={darkMode ? "dark-mode" : "light-mode"}>
+        <Menu inverted fixed="top">
+          <Container>
+            <Menu.Item header>
+              <Icon name="world" />
+              Countriest-List
+            </Menu.Item>
+
+            <Menu.Item position="right">
+              <Image size="mini" src="sun.png" />
+              <label class="switch">
+                <input
+                  type="checkbox"
+                  onChange={() => setDarkMode((prevMode) => !prevMode)}
+                />
+                <span class="slider round"></span>
+              </label>
+              <Image size="mini" src="moon.png" />
+            </Menu.Item>
+          </Container>
+        </Menu>
+        <Container>
+          <CountryDashboard />
+        </Container>
+      </div>
     </Fragment>
   );
 }

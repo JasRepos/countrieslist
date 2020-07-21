@@ -34,7 +34,7 @@ const CountryDashboard = (props) => {
   }, [search, props.countries]);
 
   return (
-    <div>
+    <div> 
       <Grid>
         <Grid.Row centered>
           <Image size="huge" alt="World" src="world.png" />
