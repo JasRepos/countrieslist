@@ -13,5 +13,5 @@ const SearchBoxComponent = ({placeholder, handleChange}) => {
         />
     )
 }
-
+ 
 export default SearchBoxComponent

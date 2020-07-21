@@ -19,7 +19,7 @@ class ModalComponent extends Component {
           style={{ border: "0", padding: "0", cursor: "pointer" }}
         >
           {" "}
-          <Image src={country.flag}></Image>{" "}
+          <Image  src={country.flag}></Image>{" "}
         </button>
 
         <Modal dimmer={dimmer} open={open} onClose={this.close}>
