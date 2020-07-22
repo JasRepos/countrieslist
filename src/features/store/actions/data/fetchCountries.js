@@ -6,6 +6,7 @@ const fetchCountries = (dispatch) => {
     fetch('https://restcountries.eu/rest/v2/all')
     .then(res => res.json())
     .then(res => dispatch({type:FETCH_COUNTRIES, payload: res}))
+    .catch(error => console.log(error))
 } 
 
 export default fetchCountries
