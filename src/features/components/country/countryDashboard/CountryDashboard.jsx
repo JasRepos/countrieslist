@@ -23,7 +23,7 @@ const CountryDashboard = (props) => {
 
   useEffect(() => {
     props.fetchCountries();
-  }, );
+  },[fetchCountries] );
 
   useEffect(() => {
     setFilteredCountries(
