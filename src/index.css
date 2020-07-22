@@ -13,10 +13,30 @@
   padding-top: 7em;
 }
 
+.light-mode .ui.fixed.menu{
+  background-image: linear-gradient(
+    135deg,
+    rgb(24, 42, 115) 0%,
+    rgb(33, 138, 174) 69%,
+    rgb(32, 167, 172) 89%
+) !important;
+}
+
 .dark-mode {
   background-color: #373737;
   padding-top: 7em;
   
+}
+
+.dark-mode .ui.fixed.menu{
+  background-color: #000000;
+  
+  
+}
+
+.dark-mode .ts {
+  font-family: 'Bigelow Rules', cursive;
+  font-size: 40px;
 }
 
 .empty{
@@ -32,14 +52,7 @@
 
 /* navbar styles */
 
-.ui.fixed.menu {
-  background-image: linear-gradient(
-          135deg,
-          rgb(24, 42, 115) 0%,
-          rgb(33, 138, 174) 69%,
-          rgb(32, 167, 172) 89%
-  ) !important;
-}
+
 
 .ui.main.container,
 .main.segment {

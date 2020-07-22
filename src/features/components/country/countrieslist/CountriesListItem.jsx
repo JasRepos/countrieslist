@@ -15,7 +15,7 @@ const CountriesListItem = (props) => {
       >
         <ModalComponent country={props.country} />
 
-        <h2>{props.country.name}</h2>
+        <h2 className="ts">{props.country.name}</h2>
       </Container>
     </Fragment>
   );
