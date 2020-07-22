@@ -30,7 +30,7 @@ class ModalComponent extends Component {
           <Image src={country.flag}></Image>
         </button>
 
-        <Modal dimmer={dimmer} open={open} onClose={this.close}>
+        <Modal basic dimmer={dimmer} open={open} onClose={this.close}>
           <Modal.Header>
             <Container>
               <Grid>
