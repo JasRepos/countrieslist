@@ -26,6 +26,10 @@
   margin: 0;
 }
 
+.button-flag{
+  border: "0"; padding: "0"; cursor: "pointer"
+}
+
 /* navbar styles */
 
 .ui.fixed.menu {

@@ -7,6 +7,8 @@ import { Provider } from 'react-redux';
 import store from './features/store';
 
 
+
+
 const rootEl = document.getElementById("root");
 
 let render = () => {

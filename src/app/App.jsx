@@ -31,21 +31,21 @@ function App() {
   return (
     <Fragment>
       <div className={darkMode ? "dark-mode" : "light-mode"}>
-        <Menu inverted fixed="top">
+        <Menu secondary inverted fixed="top">
           <Container>
-            <Menu.Item header>
-              <Icon name="world" />
-              Countriest-List
+            <Menu.Item position="left">
+              <Icon name="world" size="large"/> 
+              Countries-List
             </Menu.Item>
 
             <Menu.Item position="right">
               <Image size="mini" src="sun.png" />
-              <label class="switch">
+              <label className="switch">
                 <input
                   type="checkbox"
                   onChange={() => setDarkMode((prevMode) => !prevMode)}
                 />
-                <span class="slider round"></span>
+                <span className="slider round"></span>
               </label>
               <Image size="mini" src="moon.png" />
             </Menu.Item>
