@@ -35,7 +35,7 @@ function App() {
           <Container>
             <Menu.Item position="left">
               <Icon name="world" size="large"/> 
-              Countries-List
+              Countries Info
             </Menu.Item>
 
             <Menu.Item position="right">
