@@ -4,9 +4,7 @@ import {
   Image,
   Modal,
   Grid,
-  Segment,
   Container,
-  Card,
   Label,
 } from "semantic-ui-react";
 import SimpleMap from "../map/SimpleMap";
@@ -70,22 +68,30 @@ class ModalComponent extends Component {
                       <Label color="blue" style={{ margin: "10px" }}>
                         {" "}
                         Language Name:
-                        <Label.Detail key={language.name} >{language.name}</Label.Detail>
+                        <Label.Detail key={language.name}>
+                          {language.name}
+                        </Label.Detail>
                       </Label>
                       <Label color="blue" style={{ margin: "10px" }}>
                         {" "}
                         Native Name:
-                        <Label.Detail key={language.name} >{language.nativeName} </Label.Detail>
+                        <Label.Detail key={language.name}>
+                          {language.nativeName}{" "}
+                        </Label.Detail>
                       </Label>
                       <Label color="blue" style={{ margin: "10px" }}>
                         {" "}
                         Language ISO639_1:
-                        <Label.Detail key={language.name}>{language.iso639_1}</Label.Detail>
+                        <Label.Detail key={language.name}>
+                          {language.iso639_1}
+                        </Label.Detail>
                       </Label>
                       <Label color="blue" style={{ margin: "10px" }}>
                         {" "}
                         Language ISO639_1:
-                        <Label.Detail key={language.name}>{language.iso639_2}</Label.Detail>
+                        <Label.Detail key={language.name}>
+                          {language.iso639_2}
+                        </Label.Detail>
                       </Label>
                     </Grid>
                   ))}
@@ -95,17 +101,23 @@ class ModalComponent extends Component {
                       <Label color="yellow" style={{ margin: "10px" }}>
                         {" "}
                         Currency Name:
-                        <Label.Detail key={currency.name}>{currency.name} </Label.Detail>
+                        <Label.Detail key={currency.name}>
+                          {currency.name}{" "}
+                        </Label.Detail>
                       </Label>
                       <Label color="yellow" style={{ margin: "10px" }}>
                         {" "}
                         Currency Code:
-                        <Label.Detail key={currency.name}>{currency.code}</Label.Detail>
+                        <Label.Detail key={currency.name}>
+                          {currency.code}
+                        </Label.Detail>
                       </Label>
                       <Label color="yellow" style={{ margin: "10px" }}>
                         {" "}
                         Currency Symbol:
-                        <Label.Detail key={currency.name}>{currency.symbol}</Label.Detail>
+                        <Label.Detail key={currency.name}>
+                          {currency.symbol}
+                        </Label.Detail>
                       </Label>
                     </Grid>
                   ))}

@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Container, Image, Icon, Menu } from "semantic-ui-react";
+import { Container,  Icon, Menu } from "semantic-ui-react";
 import CountryDashboard from "../features/components/country/countryDashboard/CountryDashboard";
 
 function App() {
@@ -34,20 +34,20 @@ function App() {
         <Menu secondary inverted fixed="top">
           <Container>
             <Menu.Item position="left">
-              <Icon name="world" size="large"/> 
+              <Icon name="world" size="large" />
               Countries Info
             </Menu.Item>
 
             <Menu.Item position="right">
-              <Image size="mini" src="sun.png" />
+              <Icon size="large" color="orange"  name="sun" />
               <label className="switch">
                 <input
                   type="checkbox"
                   onChange={() => setDarkMode((prevMode) => !prevMode)}
                 />
                 <span className="slider round"></span>
-              </label>
-              <Image size="mini" src="moon.png" />
+              </label> 
+              <Icon size="large"  name="moon" />
             </Menu.Item>
           </Container>
         </Menu>

@@ -5,6 +5,7 @@ import SearchBoxComponent from "../../SearchBox/SearchBoxComponent";
 import { connect } from "react-redux";
 import fetchCountries from "../../../store/actions/data/fetchCountries";
 
+
 const MapStateToProps = (state) => {
   return {
     countries: state.countries,
@@ -37,7 +38,7 @@ const CountryDashboard = (props) => {
     <div> 
       <Grid>
         <Grid.Row centered>
-          <Image size="huge" alt="World" src="world.png" />
+          <Image size="huge" alt="World" src="https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg" />
         </Grid.Row>
         <Grid.Row centered>
           <SearchBoxComponent
